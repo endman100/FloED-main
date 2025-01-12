@@ -1,4 +1,6 @@
-## FloED : Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion
+<h1 align="center" style="font-weight: bold; font-size: 2.5rem;">
+  FloED: <span style="font-size: 1.5rem; font-weight: normal; color: #555;">Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion</span>
+</h1>
 
 <div align="center">
 
