@@ -1,16 +1,14 @@
-## FloED:Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion
+## FloED : Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion
 
-> Bohai Gu <sup>1,2</sup>,
-> Hao Luo <sup>2</sup>,
-> Song Guo <sup>1</sup>,
-> Peiran Dong <sup>1</sup>,
+<div align="center">
 
-> <sup>1</sup> Hong Kong University of Science and Technology
-> <sup>2</sup> Alibaba Group
+Bohai Gu &emsp; Hao Luo &emsp; Song Guo &emsp; Peiran Dong
+
+HKUST, DAMO Academy, Alibaba Group
 
 [![arXiv](https://img.shields.io/badge/arXiv-2412.00857-b31b1b)](https://arxiv.org/abs/2412.00857)
 [![Project Page](https://img.shields.io/badge/Project-Website-orange)](https://nevsnev.github.io/FloED)
-
+</div>
 
 
 
