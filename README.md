@@ -1,4 +1,4 @@
-# FloED <br>Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion
+## FloED:Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion
 
 > Bohai Gu <sup>1,2</sup>,
 > Hao Luo <sup>2</sup>,
