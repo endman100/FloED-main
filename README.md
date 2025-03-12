@@ -1,10 +1,11 @@
 <h1 align="center" style="font-weight: bold; font-size: 2.5rem;">
-  FloED: <span style="font-size: 1.5rem; font-weight: normal; color: #555;">Advanced Video Inpainting Using Optical Flow-Guided Efficient Diffusion</span>
+  FloED: <span style="font-size: 1.5rem; font-weight: normal; color: #555;">Coherent Video Inpainting Using Optical Flow-Guided Efficient Diffusion</span>
 </h1>
+
 
 <div align="center">
 
-Bohai Gu &emsp; Hao Luo &emsp; Song Guo &emsp; Peiran Dong
+Bohai Gu &emsp; Hao Luo &emsp; Song Guo &emsp; Peiran Dong  &emsp; Qihua Zhou  
 
 HKUST, DAMO Academy, Alibaba Group
 
@@ -16,24 +17,28 @@ HKUST, DAMO Academy, Alibaba Group
 
  <div class="content has-text-justified">
           <p>
-            Recently, diffusion-based methods have achieved great improvements in the video inpainting task. However, these methods still face many challenges, such as maintaining temporal consistency and the time-consuming issue.
-            This paper proposes an advanced video inpainting framework using optical Flow-guided Efficient Diffusion, called FloED. 
-            Specifically, FloED employs a dual-branch architecture, where a flow branch first restores corrupted flow and a multi-scale flow adapter provides motion guidance to the main inpainting branch.
-            Additionally, a training-free latent interpolation method is proposed to accelerate the multi-step denoising process using flow warping. Further introducing a flow attention cache mechanism, FLoED efficiently reduces the computational cost brought by incorporating optical flow.
+      The text-guided video inpainting technique has significantly improved the performance of content generation applications. A recent family for these improvements uses diffusion models, which have become essential for achieving high-quality video inpainting results, yet they still face performance bottlenecks in temporal consistency and computational efficiency. This motivates us to propose a new video inpainting framework using optical Flow-guided Efficient Diffusion (FloED) for higher video coherence. Specifically, FloED employs a dual-branch architecture, where the time-agnostic flow branch restores corrupted flow first, and the multi-scale flow adapters provide motion guidance to the main inpainting branch. Besides, a training-free latent interpolation method is proposed to accelerate the multi-step denoising process using flow warping. With the flow attention cache mechanism, FLoED efficiently reduces the computational cost of incorporating optical flow. Extensive experiments on background restoration and object removal tasks show that FloED outperforms state-of-the-art diffusion-based methods in both quality and efficiency. 
           </p>
         </div>
+
 
 ![Method Overview](Assert/Fig_0.jpg)
 
 
 
 
-Please check our [project page](https://nevsnev.github.io/FloED) for inpainting results.
+Please check our [project page](https://nevsnev.github.io/FloED) for Text-guided video pinpointing results.
 
-## Code coming soon.
+## To-Do List
+
+- [ ] Release the inference code and weights  
+
+- [ ] Release the training code  
+
+  
 
 
-## 📚 BibTeX
+## BibTeX
 
 ```bibtex
 @article{gu2024advanced,
