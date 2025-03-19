@@ -26,7 +26,7 @@ HKUST, DAMO Academy, Alibaba Group
 
 **Video Demo**
 
-![video demo](Assert/video.mp4)
+![video demo](Assert/video.gif)
 
 
 Please refer our [project page](https://nevsnev.github.io/FloED) for more details.
