@@ -24,10 +24,14 @@ HKUST, DAMO Academy, Alibaba Group
 
 ![Method Overview](Assert/Fig_0.jpg)
 
+**Video Demo**
+
+![video demo](Assert/video.mp4)
 
 
+Please refer our [project page](https://nevsnev.github.io/FloED) for more details.
 
-Please check our [project page](https://nevsnev.github.io/FloED) for Text-guided video pinpointing results.
+
 
 ## To-Do List
 
