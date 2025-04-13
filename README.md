@@ -63,7 +63,7 @@ Download the FloED [weights](https://drive.google.com/file/d/1_P9_-63ChHDI3knqsx
 
 
 
-### **Quick Start Inference ** 
+## Quick Start Inference
 
 We provides several examples for OR and BR tasks.  Modifying the `motion_module` path in the text file.
 
