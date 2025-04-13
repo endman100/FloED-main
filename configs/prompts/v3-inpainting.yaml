@@ -1,0 +1,125 @@
+- inference_config: "configs/inference/inference-v3.yaml"
+  motion_module:   "path to the FLoED checkpoint"
+
+
+  seed: [5658137986800322009]
+  steps: 25
+  guidance_scale: 15
+
+  W: 720
+  H: 360
+  L: 16
+  frames_path: "Input/woman_1"
+  masks_path: "Input/woman_1_mask"
+  first_frame_path: "Input/SD2/woman_1.png"
+
+
+  prompt:
+    - "A fan of cash floating in front of a white bookshelf with plants and book in the background."
+
+    
+  n_prompt:
+    - "woman, flickering, flickering light, semi-realistic, cgi, 3d, render, sketch, cartoon,
+    drawing, anime, text, close up, cropped, out of frame, worst quality, low quality,
+    jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands,
+    poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated,
+    bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions,
+    malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers,
+    too many fingers, long neck"
+
+  samper: DDIM 
+
+
+
+- inference_config: "configs/inference/inference-v3.yaml"
+  motion_module:   "path to the FLoED checkpoint"
+
+
+  seed: [5658137986800322009]
+  steps: 25
+  guidance_scale: 15
+
+  W: 480
+  H: 960
+  L: 16
+  frames_path: "Input/woman_2"
+  masks_path: "Input/woman_2_mask"
+  first_frame_path: "Input/SD2/woman_2.png"
+
+
+  prompt:
+    - "Forest with a stream running through it, surrounded by trees and plants."
+
+    
+  n_prompt:
+    - "woman, flickering, flickering light, semi-realistic, cgi, 3d, render, sketch, cartoon,
+    drawing, anime, text, close up, cropped, out of frame, worst quality, low quality,
+    jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands,
+    poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated,
+    bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions,
+    malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers,
+    too many fingers, long neck"
+
+  samper: DDIM 
+
+- inference_config: "configs/inference/inference-v3.yaml"
+  motion_module:   "path to the FLoED checkpoint"
+
+
+  seed: [5658137986800322009]
+  steps: 25
+  guidance_scale: 15
+
+  W: 720
+  H: 360
+  L: 16
+  frames_path: "Input/BR_1"
+  masks_path: "Input/BR_mask_1"
+  first_frame_path: "Input/SD2/BR_1.png"
+
+
+  prompt:
+    - "A breathtaking mountain landscape, with distant peaks shrouded in mist, creating a serene and mysterious atmosphere."
+    
+  n_prompt:
+    - "woman, flickering, flickering light, semi-realistic, cgi, 3d, render, sketch, cartoon,
+    drawing, anime, text, close up, cropped, out of frame, worst quality, low quality,
+    jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands,
+    poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated,
+    bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions,
+    malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers,
+    too many fingers, long neck"
+
+  samper: DDIM 
+
+- inference_config: "configs/inference/inference-v3.yaml"
+  motion_module:    "path to the FLoED checkpoint"
+
+
+  seed: [5658137986800322009]
+  steps: 25
+  guidance_scale: 15
+
+  W: 720
+  H: 360
+  L: 16
+  frames_path: "Input/BR_2"
+  masks_path: "Input/BR_mask_2"
+  first_frame_path: "Input/SD2/BR_2.png"
+
+
+  prompt:
+    - "The surface of water with gentle waves, reflecting warm golden hues."
+    
+  n_prompt:
+    - "woman, flickering, flickering light, semi-realistic, cgi, 3d, render, sketch, cartoon,
+    drawing, anime, text, close up, cropped, out of frame, worst quality, low quality,
+    jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands,
+    poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated,
+    bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions,
+    malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers,
+    too many fingers, long neck"
+
+  samper: DDIM 
+
+

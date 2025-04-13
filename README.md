@@ -33,13 +33,51 @@ Please refer our [project page](https://nevsnev.github.io/FloED) for more detail
 
 
 
+## 🔥 Update
+
+- \[2025.04.13] 🔥 🔥 🔥  Inference code and weightd have been released.
+
+
+
 ## To-Do List
 
-- [ ] Release the inference code and weights  
+- [x] Release the inference code and weights.
+- [ ] Release the latent interpolation code.
+- [ ] Release the training code and evaluation benchmark.
 
-- [ ] Release the training code  
 
-  
+
+## Install
+
+### 1. Environment Setup
+
+ You can install the necessary dependencies using the following command:
+
+```shell
+conda env create -f environment.yaml
+```
+
+### 2. Preparing the Checkpoints
+
+Download the FloED [weights](https://drive.google.com/file/d/1_P9_-63ChHDI3knqsx6VRLeqN2TMXHds/view?usp=sharing).
+
+
+
+### **Quick Start Inference ** 
+
+We provides several examples for OR and BR tasks.  Modifying the `motion_module` path in the text file.
+
+```python
+python -m scripts.animate --config configs/prompts/v3-inpainting.yaml
+```
+
+We have observed that saving results as **GIFs** may introduce noticeable flickering in videos. For higher-quality output, we recommend converting your results in **MP4 format** instead.
+
+To test with your own videos and masks,  you can use the Stable Diffusion Inpainting script located at `Input/SD2/SD2.py` to generate an anchor frame.
+
+## License
+
+This project is developed based on [Animatediff](https://github.com/guoyww/AnimateDiff). Please refer to their original license for usage details.
 
 
 ## BibTeX
