@@ -1,3 +1,7 @@
+![Qualitative Results](Assert/Fig1.jpg)
+
+ 
+
 <h1 align="center" style="font-weight: bold; font-size: 2.5rem;">
   FloED: <span style="font-size: 1.5rem; font-weight: normal; color: #555;">Coherent Video Inpainting Using Optical Flow-Guided Efficient Diffusion</span>
 </h1>
@@ -64,6 +68,8 @@ Download the FloED [weights](https://drive.google.com/file/d/1_P9_-63ChHDI3knqsx
 
 
 ## Quick Start Inference
+
+
 
 We provides several examples for OR and BR tasks.  Modifying the `motion_module` path in the text file.
 
