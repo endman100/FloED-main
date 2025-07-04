@@ -8,10 +8,11 @@ from torch import nn
 import torchvision
 
 from diffusers.configuration_utils import ConfigMixin, register_to_config
-from diffusers.modeling_utils import ModelMixin
+from diffusers.models import ModelMixin
 from diffusers.utils import BaseOutput
 from diffusers.utils.import_utils import is_xformers_available
-from diffusers.models.attention import CrossAttention, FeedForward
+from diffusers.models.attention import FeedForward
+from diffusers.models.attention_processor import Attention as CrossAttention
 
 from einops import rearrange, repeat
 import math
@@ -290,7 +291,7 @@ class VersatileAttention(CrossAttention):
 
         query = self.to_q(hidden_states)
         dim = query.shape[-1]
-        query = self.reshape_heads_to_batch_dim(query)
+        query = self.head_to_batch_dim(query)
 
         if self.added_kv_proj_dim is not None:
             raise NotImplementedError
@@ -299,8 +300,8 @@ class VersatileAttention(CrossAttention):
         key = self.to_k(encoder_hidden_states)
         value = self.to_v(encoder_hidden_states)
 
-        key = self.reshape_heads_to_batch_dim(key)
-        value = self.reshape_heads_to_batch_dim(value)
+        key = self.head_to_batch_dim(key)
+        value = self.head_to_batch_dim(value)
 
         if attention_mask is not None:
             if attention_mask.shape[-1] != query.shape[1]:
@@ -309,15 +310,14 @@ class VersatileAttention(CrossAttention):
                 attention_mask = attention_mask.repeat_interleave(self.heads, dim=0)
 
         # attention, what we cannot get enough of
-        if self._use_memory_efficient_attention_xformers:
-            hidden_states = self._memory_efficient_attention_xformers(query, key, value, attention_mask)
-            # Some versions of xformers return output in fp32, cast it back to the dtype of the input
-            hidden_states = hidden_states.to(query.dtype)
+        if self.attn_processor is not None:
+            hidden_states = self.attn_processor(self, query, key, value, attention_mask=attention_mask)
         else:
+            # 回退到標準注意力或切片注意力
             if self._slice_size is None or query.shape[0] // self._slice_size == 1:
                 hidden_states = self._attention(query, key, value, attention_mask)
             else:
-                hidden_states = self._sliced_attention(query, key, value, sequence_length, dim, attention_mask)
+                hidden_states = self._sliced_attention(query, key, value, query.shape[0], query.shape[-1], attention_mask)
 
         # linear proj
         hidden_states = self.to_out[0](hidden_states)

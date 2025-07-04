@@ -59,7 +59,8 @@ def main(args):
         model_config.first_frame_path = model_config.get("first_frame_path", args.first_frame_path)
 
         inference_config = OmegaConf.load(model_config.get("inference_config"))
-        unet = UNet3DConditionModel.from_pretrained_2d(args.pretrained_model_path, subfolder="unet",
+        pretrained_model_path = r"D:\.cache\hub\models--stable-diffusion-v1-5--stable-diffusion-inpainting\snapshots\8a4288a76071f7280aedbdb3253bdb9e9d5d84bb"
+        unet = UNet3DConditionModel.from_pretrained_2d(pretrained_model_path, subfolder="unet",
                                                        unet_additional_kwargs=OmegaConf.to_container(
                                                            inference_config.unet_additional_kwargs)).cuda()
 
@@ -131,7 +132,6 @@ def main(args):
             unet.enable_xformers_memory_efficient_attention()
             if controlnet is not None: 
                 controlnet.enable_xformers_memory_efficient_attention()
-
         pipeline = AnimationPipeline(
             vae=vae.half(), 
             text_encoder=text_encoder.half(), 
@@ -140,8 +140,8 @@ def main(args):
             controlnet=controlnet,
             scheduler=DDIMScheduler(**OmegaConf.to_container(inference_config.noise_scheduler_kwargs)),
             Flow_estimator=Flow_estimator.half(),
-        ).to("cuda")
-
+        )
+        pipeline = pipeline.to("cuda")
         pipeline = load_weights(
             pipeline,
             # Motion module
@@ -155,6 +155,8 @@ def main(args):
             lora_model_path=model_config.get("lora_model_path", ""),
             lora_alpha=model_config.get("lora_alpha", 0.8),
         ).to("cuda")
+        pipeline.set_use_memory_efficient_attention_xformers(True)
+        pipeline.enable_xformers_memory_efficient_attention()
 
         prompts = model_config.prompt
         n_prompts = list(model_config.n_prompt) * len(prompts) if len(

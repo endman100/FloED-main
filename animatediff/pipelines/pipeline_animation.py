@@ -17,7 +17,7 @@ from transformers import CLIPTextModel, CLIPTokenizer
 
 from diffusers.configuration_utils import FrozenDict
 from diffusers.models import AutoencoderKL
-from diffusers.pipeline_utils import DiffusionPipeline
+from diffusers import DiffusionPipeline
 from diffusers.schedulers import (
     DDIMScheduler,
     DPMSolverMultistepScheduler,
@@ -203,6 +203,7 @@ class AnimationPipeline(DiffusionPipeline):
             unet=unet,
             scheduler=scheduler,
             controlnet=controlnet,
+            Flow_estimator=Flow_estimator
         )
         self.vae_scale_factor = 2 ** (len(self.vae.config.block_out_channels) - 1)
 

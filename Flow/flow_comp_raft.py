@@ -2,6 +2,8 @@ import argparse
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from diffusers import ModelMixin
+
 
 from .RAFT import RAFT
 from .flow_loss_utils import flow_warp, ternary_loss2
@@ -24,7 +26,7 @@ def initialize_RAFT(model_path='weights/raft-things.pth', device='cuda'):
     return model
 
 
-class RAFT_bi(nn.Module):
+class RAFT_bi(ModelMixin, nn.Module):
     """Flow completion loss"""
     def __init__(self, model_path='weights/raft-things.pth', device='cuda'):
         super().__init__()
